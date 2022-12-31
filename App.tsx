@@ -1,10 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+
+import {Home} from './src/screens/Home';
 
 export const App = () => {
-  return (
-    <View>
-      <Text>Olá mundo!</Text>
-    </View>
-  );
+  return <Home />;
 };
