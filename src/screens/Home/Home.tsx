@@ -1,11 +1,17 @@
 import React from 'react';
+
+import {Container, BallonGroup, MiniCardGroup} from './styles';
+
 import {BalloonClimate} from '../../components/BalloonClimate';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
-import {Container, BallonGroup, MiniCardGroup} from './styles';
+
+import {Card} from '../../components/Card';
 
 export function Home() {
   return (
     <Container>
+      <Card climate="Cloud-zap" />
+
       <MiniCardGroup>
         <MiniCardClimate opacity type="rain" value={28} />
         <MiniCardClimate type="wind" value={8} />

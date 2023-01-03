@@ -24,5 +24,6 @@ export const MiniCardGroup = styled(View)`
   align-items: center;
 
   width: 90%;
+  margin-top: 20px;
   margin-bottom: 20px;
 `;
