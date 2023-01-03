@@ -7,7 +7,7 @@ export function Home() {
   return (
     <Container>
       <MiniCardGroup>
-        <MiniCardClimate type="rain" value={28} />
+        <MiniCardClimate opacity type="rain" value={28} />
         <MiniCardClimate type="wind" value={8} />
         <MiniCardClimate type="humidity" value={64} />
       </MiniCardGroup>

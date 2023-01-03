@@ -1,33 +1,26 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {Ballon, Icon, Card, Span} from './styles';
 import {MiniCardClimateProps} from './types';
 
-const rain = require('../../../assets/icons/Big-rain-drops.png');
-const humidity = require('../../../assets/icons/Big-snow.png');
-const wind = require('../../../assets/icons/Moon-fast-wind.png');
+const icons = {
+  rain: require('../../../assets/icons/Big-rain-drops.png'),
+  humidity: require('../../../assets/icons/Big-snow.png'),
+  wind: require('../../../assets/icons/Moon-fast-wind.png'),
+};
 
-export function MiniCardClimate({type, value}: MiniCardClimateProps) {
-  const Content = useCallback(() => {
-    if (type === 'rain' || type === 'humidity') {
-      return (
-        <Card>
-          <Ballon>
-            <Icon source={type === 'rain' ? rain : humidity} />
-          </Ballon>
-          <Span>{value}%</Span>
-        </Card>
-      );
-    } else {
-      return (
-        <Card>
-          <Ballon>
-            <Icon source={wind} />
-          </Ballon>
-          <Span>{value}km/h</Span>
-        </Card>
-      );
-    }
-  }, [type, value]);
+const unit = {
+  rain: '%',
+  humidity: '%',
+  wind: 'km/h',
+};
 
-  return <Content />;
+export function MiniCardClimate({type, value, opacity}: MiniCardClimateProps) {
+  return (
+    <Card>
+      <Ballon hasOpacity={Boolean(opacity)}>
+        <Icon source={icons[type]} />
+      </Ballon>
+      <Span>{`${value} ${unit[type]}`}</Span>
+    </Card>
+  );
 }

@@ -7,8 +7,8 @@ export const Card = styled(View)`
   align-items: center;
 `;
 
-export const Ballon = styled(View)<{opacity?: boolean}>`
-  background-color: #ffffff;
+export const Ballon = styled(View)<{hasOpacity: boolean}>`
+  background-color: ${({hasOpacity}) => (hasOpacity ? '#ffffff33' : '#ffffff')};
   border-radius: 20px;
   padding: 10px;
   width: 70px;
