@@ -16,12 +16,7 @@ import {
 } from './styles';
 import {CardProps} from './types';
 
-const icons = {
-  'Sun-cloud-mid-rain': require('../../../assets/icons/Sun-cloud-mid-rain.png'),
-  'Cloud-zap': require('../../../assets/icons/Cloud-zap.png'),
-  'Moon-cloud-fast-wind': require('../../../assets/icons/Moon-cloud-fast-wind.png'),
-  'Mid-snow-fast-winds': require('../../../assets/icons/Mid-snow-fast-winds.png'),
-};
+import {icons3DLib} from '../../utilities/Icons3D';
 
 export function Card({
   climate,
@@ -34,7 +29,7 @@ export function Card({
     <Wrapper>
       <Container colors={['#AECDFF', '#5896FD']}>
         <Header>
-          <IconHeader source={icons[climate]} />
+          <IconHeader source={icons3DLib[climate]} />
           <InfoTemperature>
             <Temperature>{temperature}</Temperature>
             <Feels>{feel}</Feels>
@@ -45,7 +40,7 @@ export function Card({
             <Climate>{timeCourse}</Climate>
             <TimeDay>{timeDay}</TimeDay>
           </InfoClimate>
-          <IconMain source={icons['Mid-snow-fast-winds']} />
+          <IconMain source={icons3DLib['Mid-snow-fast-winds']} />
         </Main>
       </Container>
     </Wrapper>

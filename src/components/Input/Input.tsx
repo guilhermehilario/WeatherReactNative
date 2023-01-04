@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Icon, InputText} from './styles';
 
-import {iconsLib} from '../../utilities';
+import {icons3DLib} from '../../utilities';
 import {TextInputFieldProps} from './types';
 
 interface InputRootProps {
@@ -13,7 +13,7 @@ export function TextInputRoot({children}: InputRootProps) {
 }
 
 export function TextInputIcon() {
-  return <Icon source={iconsLib['Position-3D']} />;
+  return <Icon source={icons3DLib['Position-3D']} />;
 }
 
 export function TextInputField({...rest}: TextInputFieldProps) {

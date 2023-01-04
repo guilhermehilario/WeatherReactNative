@@ -1,5 +1,5 @@
 import React from 'react';
-import {iconsLib} from '../../utilities';
+import {icons3DLib} from '../../utilities';
 import {
   Container,
   DateLabel,
@@ -24,7 +24,7 @@ export function CardDay({
       <Temperature>{temperature}</Temperature>
 
       <ClimateGroup>
-        <Icon source={iconsLib[iconClimate]} />
+        <Icon source={icons3DLib[iconClimate]} />
         <LabelClimate>{climate}</LabelClimate>
       </ClimateGroup>
     </Container>
