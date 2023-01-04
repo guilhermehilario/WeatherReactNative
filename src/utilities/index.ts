@@ -1,0 +1,1 @@
+export {iconsLib} from './Icons';
