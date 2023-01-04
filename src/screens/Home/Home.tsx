@@ -14,6 +14,7 @@ import {Card} from '../../components/Card';
 import {CardDay} from '../../components/CardDay';
 import {TextInput} from '../../components/Input';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
+import {ImagePerfil} from '../../components/ImagePerfil';
 
 export function Home() {
   const [address, setAddress] = useState('');
@@ -29,6 +30,7 @@ export function Home() {
             onChangeText={setAddress}
           />
         </TextInput.Root>
+        <ImagePerfil />
       </Header>
 
       <Card
