@@ -1,5 +1,9 @@
 export interface CardProps {
   climate: ClimateTypeProps;
+  temperature: string;
+  feel: string;
+  timeCourse: string;
+  timeDay: string;
 }
 
 export type ClimateTypeProps =

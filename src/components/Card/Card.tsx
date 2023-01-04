@@ -23,21 +23,27 @@ const icons = {
   'Mid-snow-fast-winds': require('../../../assets/icons/Mid-snow-fast-winds.png'),
 };
 
-export function Card({climate}: CardProps) {
+export function Card({
+  climate,
+  temperature,
+  feel,
+  timeCourse,
+  timeDay,
+}: CardProps) {
   return (
     <Wrapper>
       <Container colors={['#AECDFF', '#5896FD']}>
         <Header>
           <IconHeader source={icons[climate]} />
           <InfoTemperature>
-            <Temperature>28°</Temperature>
-            <Feels>Feels like 22°</Feels>
+            <Temperature>{temperature}</Temperature>
+            <Feels>{feel}</Feels>
           </InfoTemperature>
         </Header>
         <Main>
           <InfoClimate>
-            <Climate>Heavy Rain</Climate>
-            <TimeDay>Tonight</TimeDay>
+            <Climate>{timeCourse}</Climate>
+            <TimeDay>{timeDay}</TimeDay>
           </InfoClimate>
           <IconMain source={icons['Mid-snow-fast-winds']} />
         </Main>

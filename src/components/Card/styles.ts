@@ -4,6 +4,9 @@ import styled from 'styled-components/native';
 
 export const Wrapper = styled(View)`
   padding-top: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
 
 export const Container = styled(LinearGradient)`
@@ -14,7 +17,7 @@ export const Container = styled(LinearGradient)`
   border-radius: 24px;
   padding: 16px;
 
-  width: 312px;
+  width: 100%;
 `;
 
 export const Header = styled(View)`
@@ -39,6 +42,7 @@ export const Temperature = styled(Text)`
 `;
 
 export const Feels = styled(Text)`
+  margin-top: -10px;
   font-size: 16px;
   color: #ffffff;
 `;
