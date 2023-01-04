@@ -1,4 +1,4 @@
-export const iconsLib = {
+export const icons3DLib = {
   'Sun-cloud-mid-rain': require('../../assets/icons/Sun-cloud-mid-rain.png'),
   'Cloud-zap': require('../../assets/icons/Cloud-zap.png'),
   'Moon-cloud-fast-wind': require('../../assets/icons/Moon-cloud-fast-wind.png'),
