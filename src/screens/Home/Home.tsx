@@ -1,26 +1,35 @@
 import React, {useState} from 'react';
 
-import {Container, BallonGroup, MiniCardGroup, CardDayGroup} from './styles';
+import {
+  BallonGroup,
+  CardDayGroup,
+  Container,
+  Header,
+  MiniCardGroup,
+} from './styles';
 
 import {BalloonClimate} from '../../components/BalloonClimate';
-import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
-
+import {Button} from '../../components/Button';
 import {Card} from '../../components/Card';
 import {CardDay} from '../../components/CardDay';
 import {TextInput} from '../../components/Input';
+import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
 
 export function Home() {
   const [address, setAddress] = useState('');
   return (
     <Container>
-      <TextInput.Root>
-        <TextInput.Icon />
-        <TextInput.Field
-          placeholder="Estrada do Regalado"
-          value={address}
-          onChangeText={setAddress}
-        />
-      </TextInput.Root>
+      <Header>
+        <Button />
+        <TextInput.Root>
+          <TextInput.Icon />
+          <TextInput.Field
+            placeholder="Estrada do Regalado"
+            value={address}
+            onChangeText={setAddress}
+          />
+        </TextInput.Root>
+      </Header>
 
       <Card
         temperature="28°"
