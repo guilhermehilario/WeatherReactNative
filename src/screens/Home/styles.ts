@@ -7,7 +7,7 @@ export const Container = styled(View)`
   align-items: center;
 
   height: 100%;
-  padding: 0 50px;
+  padding: 0 30px;
 `;
 
 export const BallonGroup = styled(View)`
