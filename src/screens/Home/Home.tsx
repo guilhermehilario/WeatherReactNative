@@ -15,6 +15,7 @@ import {CardDay} from '../../components/CardDay';
 import {TextInput} from '../../components/Input';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
 import {ImagePerfil} from '../../components/ImagePerfil';
+import {Localization} from '../../components/Localization';
 
 export function Home() {
   const [address, setAddress] = useState('');
@@ -32,7 +33,13 @@ export function Home() {
         </TextInput.Root>
         <ImagePerfil />
       </Header>
-
+      <Localization
+        city="Mauá"
+        state="São Paulo"
+        weekDay="Sunday"
+        dayNumber={29}
+        month="December"
+      />
       <Card
         temperature="28°"
         feel="Feels like 22°"
