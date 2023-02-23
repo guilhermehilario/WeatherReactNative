@@ -9,6 +9,8 @@ export const ButtonView = styled(TouchableOpacity)`
   width: 40px;
   height: 40px;
   border-radius: 12px;
+
+  box-shadow: 10px 5px 5px black;
 `;
 
 export const Icon = styled(Image)`

@@ -1,12 +1,13 @@
 import React from 'react';
-import {ButtonView, Icon} from './styles';
+import {ButtonView} from './styles';
 
-import {iconsVector} from '../../utilities';
+import {ButtonProps} from './types';
 
-export function Button() {
+export function Button({children, ...rest}: ButtonProps) {
   return (
-    <ButtonView>
-      <Icon source={iconsVector.bars} />
+    <ButtonView {...rest}>
+      {/* <Icon style={{height: 20, width: 20}} source={icon} /> */}
+      {children}
     </ButtonView>
   );
 }
