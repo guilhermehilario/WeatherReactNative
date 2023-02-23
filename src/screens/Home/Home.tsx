@@ -16,13 +16,16 @@ import {TextInput} from '../../components/Input';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
 import {ImagePerfil} from '../../components/ImagePerfil';
 import {Localization} from '../../components/Localization';
+import {iconsVector} from '../../utilities';
 
 export function Home() {
   const [address, setAddress] = useState('');
   return (
     <Container>
       <Header>
-        <Button />
+        <Button>
+          <iconsVector.bars width={25} height={25} />
+        </Button>
         <TextInput.Root>
           <TextInput.Icon />
           <TextInput.Field
