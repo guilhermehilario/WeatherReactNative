@@ -4,9 +4,10 @@ import {
   Wrapper,
   Container,
   Header,
+  Main,
+  Bottom,
   IconHeader,
   InfoTemperature,
-  Main,
   InfoClimate,
   Temperature,
   Feels,
@@ -24,10 +25,20 @@ export function Card({
   feel,
   timeCourse,
   timeDay,
+  children,
+  icon,
+  morning,
 }: CardProps) {
+  const colors = {
+    morning: ['#AECDFF', '#5896FD'],
+    night: ['#B0A4FF', '#806EF8'],
+  };
+
+  const hour = morning ? colors.morning : colors.night;
+
   return (
     <Wrapper>
-      <Container colors={['#AECDFF', '#5896FD']}>
+      <Container colors={hour}>
         <Header>
           <IconHeader source={icons3DLib[climate]} />
           <InfoTemperature>
@@ -40,8 +51,9 @@ export function Card({
             <Climate>{timeCourse}</Climate>
             <TimeDay>{timeDay}</TimeDay>
           </InfoClimate>
-          <IconMain source={icons3DLib['Mid-snow-fast-winds']} />
+          {icon ? <IconMain source={icons3DLib[icon]} /> : <></>}
         </Main>
+        <Bottom>{children}</Bottom>
       </Container>
     </Wrapper>
   );

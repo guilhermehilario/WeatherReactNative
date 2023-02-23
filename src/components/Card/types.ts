@@ -1,9 +1,12 @@
 export interface CardProps {
   climate: ClimateTypeProps;
   temperature: string;
-  feel: string;
-  timeCourse: string;
-  timeDay: string;
+  feel?: string;
+  timeCourse?: string;
+  timeDay?: string;
+  children?: React.ReactNode;
+  icon?: ClimateTypeProps;
+  morning?: boolean;
 }
 
 export type ClimateTypeProps =

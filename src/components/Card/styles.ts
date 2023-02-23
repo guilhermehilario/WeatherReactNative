@@ -28,6 +28,15 @@ export const Header = styled(View)`
   width: 100%;
 `;
 
+export const Bottom = styled(View)`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10px;
+  width: 100%;
+`;
+
 export const InfoTemperature = styled(View)`
   flex-direction: column;
   justify-content: center;
