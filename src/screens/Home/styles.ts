@@ -3,10 +3,11 @@ import styled from 'styled-components/native';
 
 export const Container = styled(View)`
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   height: 100%;
+  width: 100%;
   padding: 0 30px;
 `;
 
@@ -30,7 +31,7 @@ export const MiniCardGroup = styled(View)`
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
+  width: 90%;
   margin-top: 20px;
   margin-bottom: 20px;
 `;

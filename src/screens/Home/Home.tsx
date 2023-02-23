@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {
   BallonGroup,
-  CardDayGroup,
+  // CardDayGroup,
   Container,
   Header,
   MiniCardGroup,
@@ -11,29 +11,20 @@ import {
 import {BalloonClimate} from '../../components/BalloonClimate';
 import {Button} from '../../components/Button';
 import {Card} from '../../components/Card';
-import {CardDay} from '../../components/CardDay';
-import {TextInput} from '../../components/Input';
+// import {CardDay} from '../../components/CardDay';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
 import {ImagePerfil} from '../../components/ImagePerfil';
 import {Localization} from '../../components/Localization';
 import {iconsVector} from '../../utilities';
 
 export function Home() {
-  const [address, setAddress] = useState('');
   return (
     <Container>
       <Header>
         <Button>
-          <iconsVector.bars width={25} height={25} />
+          <iconsVector.bars width={25} height={25} fill="#000" />
         </Button>
-        <TextInput.Root>
-          <TextInput.Icon />
-          <TextInput.Field
-            placeholder="Estrada do Regalado"
-            value={address}
-            onChangeText={setAddress}
-          />
-        </TextInput.Root>
+
         <ImagePerfil />
       </Header>
       <Localization
@@ -49,6 +40,8 @@ export function Home() {
         timeCourse="Heavy Rain"
         timeDay="Tonight"
         climate="Cloud-zap"
+        icon="Mid-snow-fast-winds"
+        morning
       />
 
       <MiniCardGroup>
@@ -70,7 +63,7 @@ export function Home() {
           info={{hour: '13:00', temperature: '29°'}}
         />
       </BallonGroup>
-
+      {/*
       <CardDayGroup>
         <CardDay
           dayNumber={29}
@@ -89,7 +82,7 @@ export function Home() {
           iconClimate="Moon-fast-wind"
           climate="Storm"
         />
-      </CardDayGroup>
+      </CardDayGroup> */}
     </Container>
   );
 }
