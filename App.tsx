@@ -6,10 +6,14 @@ import {SafeAreaView, ScrollView} from 'react-native';
 
 export const App = () => {
   return (
-    <SafeAreaView>
-      <ScrollView contentContainerStyle={{paddingVertical: 20}}>
-        <Home />
-        {/* <Map /> */}
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView
+        contentContainerStyle={{
+          paddingVertical: 20,
+          flex: 1,
+        }}>
+        {/* <Home /> */}
+        <Map />
       </ScrollView>
     </SafeAreaView>
   );
