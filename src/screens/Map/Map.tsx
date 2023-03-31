@@ -1,12 +1,46 @@
 import React, {useState} from 'react';
 
+import {FlatList} from 'react-native';
+
 import {Button} from '../../components/Button';
 import {iconsVector} from '../../utilities';
 
-import {Container, Header, Bottom, BallonGroup} from './styles';
+import {Container, Header, Bottom, BallonSeparators} from './styles';
 import {TextInput} from '../../components/Input';
 import {Card} from '../../components/Card';
 import {BalloonClimate} from '../../components/BalloonClimate';
+
+const DATA = [
+  {
+    hour: '00:00',
+    temperature: '18°',
+  },
+  {
+    hour: '02:00',
+    temperature: '19°',
+    active: true,
+  },
+  {
+    hour: '04:00',
+    temperature: '17°',
+  },
+  {
+    hour: '06:00',
+    temperature: '21°',
+  },
+  {
+    hour: '08:00',
+    temperature: '23°',
+  },
+  {
+    hour: '08:00',
+    temperature: '23°',
+  },
+];
+
+const separator = () => {
+  return <BallonSeparators />;
+};
 
 export function Map() {
   const [address, setAddress] = useState('');
@@ -37,32 +71,25 @@ export function Map() {
           feel="Feels like 22°"
           climate="Cloud-zap"
           morning={false}>
-          <BallonGroup>
-            <BalloonClimate
-              variant="hour"
-              active
-              info={{hour: '00:00', temperature: '18°'}}
-            />
-            <BalloonClimate
-              variant="hour"
-              info={{hour: '02:00', temperature: '19°'}}
-            />
-            <BalloonClimate
-              variant="hour"
-              active
-              info={{hour: '04:00', temperature: '17°'}}
-            />
-            <BalloonClimate
-              variant="hour"
-              active
-              info={{hour: '06:00', temperature: '21°'}}
-            />
-            <BalloonClimate
-              variant="hour"
-              active
-              info={{hour: '08:00', temperature: '23°'}}
-            />
-          </BallonGroup>
+          <FlatList
+            data={DATA}
+            horizontal
+            ItemSeparatorComponent={separator}
+            contentContainerStyle={{paddingHorizontal: 20}}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item}) => {
+              return (
+                <BalloonClimate
+                  variant="hour"
+                  active={!item.active}
+                  info={{
+                    hour: item.hour,
+                    temperature: item.temperature,
+                  }}
+                />
+              );
+            }}
+          />
         </Card>
       </Bottom>
     </Container>
