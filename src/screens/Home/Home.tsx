@@ -2,9 +2,13 @@ import React from 'react';
 
 import {
   BallonGroup,
+  BallonGroupBody,
+  BallonGroupHeader,
+  BallonText,
   // CardDayGroup,
   Container,
   Header,
+  Link,
   MiniCardGroup,
 } from './styles';
 
@@ -16,6 +20,7 @@ import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate'
 import {ImagePerfil} from '../../components/ImagePerfil';
 import {Localization} from '../../components/Localization';
 import {iconsVector} from '../../utilities';
+import {Text} from 'react-native';
 
 export function Home() {
   return (
@@ -51,18 +56,41 @@ export function Home() {
       </MiniCardGroup>
 
       <BallonGroup>
-        <BalloonClimate variant="day" active info={{day: 28, weekDay: 'Qui'}} />
-        <BalloonClimate variant="day" info={{day: 29, weekDay: 'Sex'}} />
-        <BalloonClimate
-          variant="hour"
-          active
-          info={{hour: '12:00', temperature: '28°'}}
-        />
-        <BalloonClimate
-          variant="hour"
-          info={{hour: '13:00', temperature: '29°'}}
-        />
+        <BallonGroupHeader>
+          <BallonText>Today</BallonText>
+          <Link>
+            <Text>Next 7 days </Text>
+            <iconsVector.arrowLeft width={15} height={15} />
+          </Link>
+        </BallonGroupHeader>
+        <BallonGroupBody>
+          {/* <BalloonClimate variant="day" active info={{day: 28, weekDay: 'Qui'}} />
+        <BalloonClimate variant="day" info={{day: 29, weekDay: 'Sex'}} /> */}
+          <BalloonClimate
+            variant="hour"
+            info={{hour: '00:00', temperature: '29°'}}
+          />
+
+          <BalloonClimate
+            variant="hour"
+            active
+            info={{hour: '02:00', temperature: '18°'}}
+          />
+          <BalloonClimate
+            variant="hour"
+            info={{hour: '04:00', temperature: '19°'}}
+          />
+          <BalloonClimate
+            variant="hour"
+            info={{hour: '06:00', temperature: '21°'}}
+          />
+          <BalloonClimate
+            variant="hour"
+            info={{hour: '08:00', temperature: '23°'}}
+          />
+        </BallonGroupBody>
       </BallonGroup>
+
       {/*
       <CardDayGroup>
         <CardDay
