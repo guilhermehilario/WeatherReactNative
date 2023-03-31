@@ -47,11 +47,17 @@ export function Card({
           </InfoTemperature>
         </Header>
         <Main>
-          <InfoClimate>
-            <Climate>{timeCourse}</Climate>
-            <TimeDay>{timeDay}</TimeDay>
-          </InfoClimate>
-          {icon ? <IconMain source={icons3DLib[icon]} /> : <></>}
+          {icon ? (
+            <>
+              <InfoClimate>
+                <Climate>{timeCourse}</Climate>
+                <TimeDay>{timeDay}</TimeDay>
+              </InfoClimate>
+              <IconMain source={icons3DLib[icon]} />
+            </>
+          ) : (
+            <></>
+          )}
         </Main>
         <Bottom>{children}</Bottom>
       </Container>

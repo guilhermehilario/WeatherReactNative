@@ -15,7 +15,6 @@ export const Container = styled(LinearGradient)`
   align-items: center;
 
   border-radius: 24px;
-  padding: 16px;
 
   width: 100%;
 `;
@@ -25,6 +24,7 @@ export const Header = styled(View)`
   justify-content: space-between;
   align-items: center;
 
+  padding: 16px;
   width: 100%;
 `;
 
@@ -34,6 +34,7 @@ export const Bottom = styled(View)`
   align-items: center;
 
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
 `;
 
