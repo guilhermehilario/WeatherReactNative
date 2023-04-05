@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 
-import {FlatList} from 'react-native';
+import {FlatList, ListRenderItemInfo} from 'react-native';
 
 import {Button} from '../../components/Button';
 import {iconsVector} from '../../utilities';
@@ -10,7 +10,7 @@ import {TextInput} from '../../components/Input';
 import {Card} from '../../components/Card';
 import {BalloonClimate} from '../../components/BalloonClimate';
 
-const DATA = [
+const DATA: ListRenderItemProps[] = [
   {
     hour: '00:00',
     temperature: '18°',
@@ -33,10 +33,16 @@ const DATA = [
     temperature: '23°',
   },
   {
-    hour: '08:00',
+    hour: '10:00',
     temperature: '23°',
   },
 ];
+
+interface ListRenderItemProps {
+  hour: string;
+  temperature: string;
+  active?: boolean;
+}
 
 const separator = () => {
   return <BallonSeparators />;
@@ -44,6 +50,22 @@ const separator = () => {
 
 export function Map() {
   const [address, setAddress] = useState('');
+  const RenderItem = useCallback(
+    ({item}: ListRenderItemInfo<ListRenderItemProps>) => {
+      return (
+        <BalloonClimate
+          variant="hour"
+          active={!item.active}
+          info={{
+            hour: item.hour,
+            temperature: item.temperature,
+          }}
+        />
+      );
+    },
+    [],
+  );
+
   return (
     <Container>
       <Header>
@@ -77,18 +99,7 @@ export function Map() {
             ItemSeparatorComponent={separator}
             contentContainerStyle={{paddingHorizontal: 20}}
             showsHorizontalScrollIndicator={false}
-            renderItem={({item}) => {
-              return (
-                <BalloonClimate
-                  variant="hour"
-                  active={!item.active}
-                  info={{
-                    hour: item.hour,
-                    temperature: item.temperature,
-                  }}
-                />
-              );
-            }}
+            renderItem={RenderItem}
           />
         </Card>
       </Bottom>

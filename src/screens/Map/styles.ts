@@ -6,7 +6,7 @@ export const Container = styled(View)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
+  
   padding: 0 30px;
 `;
 
@@ -30,7 +30,6 @@ export const BallonGroup = styled(View)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   margin-bottom: 20px;
 `;
@@ -38,3 +37,5 @@ export const BallonGroup = styled(View)`
 export const BallonSeparators = styled(View)`
   margin-left: 10px;
 `;
+
+export const ContainerStyle = styled(View)``;
