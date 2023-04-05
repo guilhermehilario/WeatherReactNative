@@ -10,39 +10,11 @@ import {TextInput} from '../../components/Input';
 import {Card} from '../../components/Card';
 import {BalloonClimate} from '../../components/BalloonClimate';
 
-const DATA: ListRenderItemProps[] = [
-  {
-    hour: '00:00',
-    temperature: '18°',
-  },
-  {
-    hour: '02:00',
-    temperature: '19°',
-    active: true,
-  },
-  {
-    hour: '04:00',
-    temperature: '17°',
-  },
-  {
-    hour: '06:00',
-    temperature: '21°',
-  },
-  {
-    hour: '08:00',
-    temperature: '23°',
-  },
-  {
-    hour: '10:00',
-    temperature: '23°',
-  },
-];
+import {ListRenderItemProps} from './types';
 
-interface ListRenderItemProps {
-  hour: string;
-  temperature: string;
-  active?: boolean;
-}
+import {sunday} from '../../../assets/data.json';
+
+const DATA: ListRenderItemProps[] = sunday;
 
 const separator = () => {
   return <BallonSeparators />;
