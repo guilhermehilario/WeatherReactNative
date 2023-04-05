@@ -22,6 +22,11 @@ import {Localization} from '../../components/Localization';
 import {iconsVector} from '../../utilities';
 import {Text} from 'react-native';
 
+import {sunday} from '../../../assets/data.json';
+import {ListRenderItemProps} from './types';
+
+const DATA: ListRenderItemProps[] = sunday;
+
 export function Home() {
   return (
     <Container>
