@@ -1,4 +1,4 @@
-import {Image, TouchableOpacity} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
 export const ButtonView = styled(TouchableOpacity)`
@@ -9,8 +9,6 @@ export const ButtonView = styled(TouchableOpacity)`
   width: 40px;
   height: 40px;
   border-radius: 12px;
-
-  box-shadow: 10px 5px 5px black;
 `;
 
 export const Icon = styled(Image)`
@@ -18,3 +16,16 @@ export const Icon = styled(Image)`
   height: 14px;
   resize-mode: contain;
 `;
+
+export const styles = StyleSheet.create({
+  shadow: {
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+  },
+});
