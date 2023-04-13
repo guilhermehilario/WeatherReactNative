@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ballon, Icon, Card, Span} from './styles';
+import {Ballon, Icon, Card, Span, styles} from './styles';
 import {MiniCardClimateProps} from './types';
 
 const icons = {
@@ -17,7 +17,7 @@ const unit = {
 export function MiniCardClimate({type, value, opacity}: MiniCardClimateProps) {
   return (
     <Card>
-      <Ballon hasOpacity={Boolean(opacity)}>
+      <Ballon hasOpacity={Boolean(opacity)} style={styles.shadow}>
         <Icon source={icons[type]} />
       </Ballon>
       <Span>{`${value} ${unit[type]}`}</Span>

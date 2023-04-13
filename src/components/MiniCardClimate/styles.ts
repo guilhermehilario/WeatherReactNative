@@ -1,4 +1,4 @@
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 export const Card = styled(View)`
@@ -25,3 +25,9 @@ export const Icon = styled(Image)`
   width: 47px;
   height: 45px;
 `;
+
+export const styles = StyleSheet.create({
+  shadow: {
+    elevation: 4,
+  },
+});
