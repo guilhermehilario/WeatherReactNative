@@ -26,13 +26,13 @@ export function BalloonClimate({
         return <Solid style={styles.shadow}>{children}</Solid>;
       } else if (variant === 'day' && !active) {
         return (
-          <View style={styles.shadow}>
+          <View style={[styles.shadow, {height: 114}]}>
             <Gradient colors={['#AECDFF', '#5896FD']}>{children}</Gradient>
           </View>
         );
       } else if (variant === 'hour' && active) {
         return (
-          <View style={styles.shadow}>
+          <View style={[styles.shadow, {height: 114}]}>
             <Gradient colors={['#B0A4FF', '#806EF8']}>{children}</Gradient>
           </View>
         );

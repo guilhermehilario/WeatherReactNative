@@ -60,6 +60,16 @@ export const WeekDay = styled(Text)<{active: boolean}>`
 
 export const styles = StyleSheet.create({
   shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
     elevation: 4,
+    borderRadius: 24,
+    backgroundColor: '#fff',
   },
 });
