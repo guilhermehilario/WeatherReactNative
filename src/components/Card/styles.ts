@@ -23,7 +23,7 @@ export const Header = styled(View)`
   justify-content: space-between;
   align-items: center;
 
-  padding: 15px;
+  padding: 5px 15px;
   width: 100%;
 `;
 
@@ -59,7 +59,7 @@ export const IconHeader = styled(Image)`
   width: 137px;
   height: 118px;
   resize-mode: contain;
-  margin-top: -50px;
+  margin-top: -40px;
 `;
 
 export const Main = styled(View)`
@@ -67,6 +67,7 @@ export const Main = styled(View)`
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 15px;
+  padding: 0 15px;
   width: 100%;
 `;
 
