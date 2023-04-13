@@ -19,11 +19,23 @@
     },
     {
       "hour": "08:00",
-      "temperature": "23°"
+      "temperature": "22°"
     },
     {
       "hour": "10:00",
+      "temperature": "22°"
+    },
+    {
+      "hour": "12:00",
       "temperature": "23°"
+    },
+    {
+      "hour": "14:00",
+      "temperature": "23°"
+    },
+    {
+      "hour": "16:00",
+      "temperature": "22°"
     }
   ]
 }
