@@ -1,27 +1,21 @@
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
 export const Wrapper = styled(View)`
   padding-top: 24px;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 `;
 
 export const Container = styled(LinearGradient)`
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
   border-radius: 24px;
-  width: 100%;
+  padding-bottom: 24px;
 `;
 
 export const Header = styled(View)`
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 
   padding: 5px 15px;
   width: 100%;
@@ -32,7 +26,6 @@ export const Bottom = styled(View)`
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 10px;
   width: 100%;
 `;
 
@@ -59,7 +52,8 @@ export const IconHeader = styled(Image)`
   width: 137px;
   height: 118px;
   resize-mode: contain;
-  margin-top: -40px;
+  position: absolute;
+  margin-left: 24px;
 `;
 
 export const Main = styled(View)`
@@ -67,7 +61,7 @@ export const Main = styled(View)`
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 15px;
-  padding: 0 15px;
+  padding: 0 24px;
   width: 100%;
 `;
 
@@ -93,3 +87,19 @@ export const IconMain = styled(Image)`
   height: 60px;
   resize-mode: contain;
 `;
+
+export const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 12,
+    borderRadius: 24,
+    backgroundColor: '#fff',
+  },
+});

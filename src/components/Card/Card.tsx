@@ -1,4 +1,5 @@
 import React from 'react';
+import {View} from 'react-native';
 
 import {
   Wrapper,
@@ -14,6 +15,7 @@ import {
   Climate,
   TimeDay,
   IconMain,
+  styles,
 } from './styles';
 import {CardProps} from './types';
 
@@ -38,29 +40,31 @@ export function Card({
 
   return (
     <Wrapper>
-      <Container colors={hour}>
-        <Header>
-          <IconHeader source={icons3DLib[climate]} />
-          <InfoTemperature>
-            <Temperature>{temperature}</Temperature>
-            <Feels>{feel}</Feels>
-          </InfoTemperature>
-        </Header>
-        <Main>
-          {icon ? (
-            <>
-              <InfoClimate>
-                <Climate>{timeCourse}</Climate>
-                <TimeDay>{timeDay}</TimeDay>
-              </InfoClimate>
-              <IconMain source={icons3DLib[icon]} />
-            </>
-          ) : (
-            <></>
-          )}
-        </Main>
-        <Bottom>{children}</Bottom>
-      </Container>
+      <View style={styles.shadow}>
+        <Container colors={hour}>
+          <Header>
+            <InfoTemperature>
+              <Temperature>{temperature}</Temperature>
+              <Feels>{feel}</Feels>
+            </InfoTemperature>
+          </Header>
+          <Main>
+            {icon ? (
+              <>
+                <InfoClimate>
+                  <Climate>{timeCourse}</Climate>
+                  <TimeDay>{timeDay}</TimeDay>
+                </InfoClimate>
+                <IconMain source={icons3DLib[icon]} />
+              </>
+            ) : (
+              <></>
+            )}
+          </Main>
+          <Bottom>{children}</Bottom>
+        </Container>
+      </View>
+      <IconHeader source={icons3DLib[climate]} />
     </Wrapper>
   );
 }
