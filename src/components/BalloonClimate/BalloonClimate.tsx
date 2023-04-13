@@ -1,9 +1,19 @@
 import React, {useCallback} from 'react';
-import {Solid, Day, Hour, Icon, Temperature, WeekDay, Gradient} from './styles';
+import {
+  Solid,
+  Day,
+  Hour,
+  Icon,
+  Temperature,
+  WeekDay,
+  Gradient,
+  styles,
+} from './styles';
 
 const cloud3 = require('../../../assets/icons/Cloud-zap.png');
 
 import {BalloonClimateProps, ContainerProps} from './types';
+import {View} from 'react-native';
 
 export function BalloonClimate({
   variant,
@@ -13,13 +23,21 @@ export function BalloonClimate({
   const Container = useCallback(
     ({children}: ContainerProps) => {
       if (variant === 'day' && active) {
-        return <Solid>{children}</Solid>;
+        return <Solid style={styles.shadow}>{children}</Solid>;
       } else if (variant === 'day' && !active) {
-        return <Gradient colors={['#AECDFF', '#5896FD']}>{children}</Gradient>;
+        return (
+          <View style={styles.shadow}>
+            <Gradient colors={['#AECDFF', '#5896FD']}>{children}</Gradient>
+          </View>
+        );
       } else if (variant === 'hour' && active) {
-        return <Gradient colors={['#B0A4FF', '#806EF8']}>{children}</Gradient>;
+        return (
+          <View style={styles.shadow}>
+            <Gradient colors={['#B0A4FF', '#806EF8']}>{children}</Gradient>
+          </View>
+        );
       } else {
-        return <Solid>{children}</Solid>;
+        return <Solid style={styles.shadow}>{children}</Solid>;
       }
     },
     [variant, active],

@@ -1,4 +1,4 @@
-import {Image, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
 
@@ -57,3 +57,9 @@ export const WeekDay = styled(Text)<{active: boolean}>`
   font-weight: 500;
   color: ${({active}) => (active ? '#806EF8' : '#FFFFFF')};
 `;
+
+export const styles = StyleSheet.create({
+  shadow: {
+    elevation: 4,
+  },
+});
