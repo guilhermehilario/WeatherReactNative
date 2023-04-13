@@ -12,7 +12,7 @@ import {
   Middle,
 } from './styles';
 
-import {FlatList, ListRenderItemInfo} from 'react-native';
+import {FlatList, ListRenderItemInfo, View} from 'react-native';
 
 import {BalloonClimate} from '../../components/BalloonClimate';
 import {Button} from '../../components/Button';
@@ -56,6 +56,8 @@ export function Home() {
         <ImagePerfil />
       </Header>
 
+      <View style={{flex: 1}} />
+
       <Middle>
         <Localization
           city="Mauá"
@@ -75,11 +77,15 @@ export function Home() {
         />
       </Middle>
 
+      <View style={{flex: 1}} />
+
       <MiniCardGroup>
         <MiniCardClimate type="rain" value={28} />
         <MiniCardClimate type="wind" value={8} />
         <MiniCardClimate type="humidity" value={64} />
       </MiniCardGroup>
+
+      <View style={{flex: 1}} />
 
       <BallonGroup>
         <BallonGroupHeader>
@@ -93,7 +99,6 @@ export function Home() {
         {/* <BalloonClimate variant="day" active info={{day: 28, weekDay: 'Qui'}} />
         <BalloonClimate variant="day" info={{day: 29, weekDay: 'Sex'}} /> */}
       </BallonGroup>
-
       <FlatList
         data={DATA}
         horizontal

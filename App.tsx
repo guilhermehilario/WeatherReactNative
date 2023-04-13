@@ -12,8 +12,8 @@ export const App = () => {
           paddingVertical: 20,
           flex: 1,
         }}>
-        {/* <Home /> */}
-        <Map />
+        <Home />
+        {/* <Map /> */}
       </ScrollView>
     </SafeAreaView>
   );
