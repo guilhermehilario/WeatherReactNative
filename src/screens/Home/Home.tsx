@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
 import {
   BallonGroup,
-  BallonGroupBody,
   BallonGroupHeader,
+  BallonSeparators,
   BallonText,
-  // CardDayGroup,
   Container,
   Header,
   Link,
   MiniCardGroup,
+  Middle,
 } from './styles';
+
+import {FlatList, ListRenderItemInfo} from 'react-native';
 
 import {BalloonClimate} from '../../components/BalloonClimate';
 import {Button} from '../../components/Button';
 import {Card} from '../../components/Card';
-// import {CardDay} from '../../components/CardDay';
 import {MiniCardClimate} from '../../components/MiniCardClimate/MiniCardClimate';
 import {ImagePerfil} from '../../components/ImagePerfil';
 import {Localization} from '../../components/Localization';
@@ -27,7 +28,24 @@ import {ListRenderItemProps} from './types';
 
 const DATA: ListRenderItemProps[] = sunday;
 
+const separator = () => {
+  return <BallonSeparators />;
+};
+
 export function Home() {
+  const RenderItem = useCallback(
+    ({item}: ListRenderItemInfo<ListRenderItemProps>) => {
+      return (
+        <BalloonClimate
+          variant="hour"
+          active={item.active}
+          info={{hour: item.hour, temperature: item.temperature}}
+        />
+      );
+    },
+    [],
+  );
+
   return (
     <Container>
       <Header>
@@ -37,22 +55,25 @@ export function Home() {
 
         <ImagePerfil />
       </Header>
-      <Localization
-        city="Mauá"
-        state="São Paulo"
-        weekDay="Sunday"
-        dayNumber={29}
-        month="December"
-      />
-      <Card
-        temperature="28°"
-        feel="Feels like 22°"
-        timeCourse="Heavy Rain"
-        timeDay="Tonight"
-        climate="Cloud-zap"
-        icon="Mid-snow-fast-winds"
-        morning
-      />
+
+      <Middle>
+        <Localization
+          city="Mauá"
+          state="São Paulo"
+          weekDay="Sunday"
+          dayNumber={29}
+          month="December"
+        />
+        <Card
+          temperature="28°"
+          feel="Feels like 22°"
+          timeCourse="Heavy Rain"
+          timeDay="Tonight"
+          climate="Cloud-zap"
+          icon="Mid-snow-fast-winds"
+          morning
+        />
+      </Middle>
 
       <MiniCardGroup>
         <MiniCardClimate type="rain" value={28} />
@@ -68,54 +89,19 @@ export function Home() {
             <iconsVector.arrowLeft width={15} height={15} />
           </Link>
         </BallonGroupHeader>
-        <BallonGroupBody>
-          {/* <BalloonClimate variant="day" active info={{day: 28, weekDay: 'Qui'}} />
-        <BalloonClimate variant="day" info={{day: 29, weekDay: 'Sex'}} /> */}
-          <BalloonClimate
-            variant="hour"
-            info={{hour: '00:00', temperature: '29°'}}
-          />
 
-          <BalloonClimate
-            variant="hour"
-            active
-            info={{hour: '02:00', temperature: '18°'}}
-          />
-          <BalloonClimate
-            variant="hour"
-            info={{hour: '04:00', temperature: '19°'}}
-          />
-          <BalloonClimate
-            variant="hour"
-            info={{hour: '06:00', temperature: '21°'}}
-          />
-          <BalloonClimate
-            variant="hour"
-            info={{hour: '08:00', temperature: '23°'}}
-          />
-        </BallonGroupBody>
+        {/* <BalloonClimate variant="day" active info={{day: 28, weekDay: 'Qui'}} />
+        <BalloonClimate variant="day" info={{day: 29, weekDay: 'Sex'}} /> */}
       </BallonGroup>
 
-      {/*
-      <CardDayGroup>
-        <CardDay
-          dayNumber={29}
-          month="Sep"
-          weekDay="Monday"
-          temperature="17°/22°"
-          iconClimate="Cloud-zap"
-          climate="Cloudy"
-        />
-
-        <CardDay
-          dayNumber={30}
-          month="Sep"
-          weekDay="Tuesday"
-          temperature="22°/27°"
-          iconClimate="Moon-fast-wind"
-          climate="Storm"
-        />
-      </CardDayGroup> */}
+      <FlatList
+        data={DATA}
+        horizontal
+        ItemSeparatorComponent={separator}
+        contentContainerStyle={{paddingHorizontal: 25}}
+        showsHorizontalScrollIndicator={false}
+        renderItem={RenderItem}
+      />
     </Container>
   );
 }

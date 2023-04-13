@@ -3,12 +3,11 @@ import styled from 'styled-components/native';
 
 export const Container = styled(View)`
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   height: 100%;
   width: 100%;
-  padding: 0 30px;
 `;
 
 export const BallonGroup = styled(View)`
@@ -18,6 +17,11 @@ export const BallonGroup = styled(View)`
 
   width: 100%;
   margin-bottom: 20px;
+  padding: 0 30px;
+`;
+
+export const BallonSeparators = styled(View)`
+  margin-left: 10px;
 `;
 
 export const BallonGroupHeader = styled(View)`
@@ -46,6 +50,12 @@ export const Header = styled(View)`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  padding: 0 30px;
+`;
+
+export const Middle = styled(View)`
+  padding: 0 30px;
+  width: 100%;
 `;
 
 export const Link = styled(TouchableOpacity)`
@@ -63,6 +73,7 @@ export const MiniCardGroup = styled(View)`
   width: 90%;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding: 0 30px;
 `;
 
 export const CardDayGroup = styled(View)`
